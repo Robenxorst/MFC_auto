@@ -1,0 +1,17 @@
+{
+    "listeners": {
+        "*:8088": {
+            "pass": "applications/mfc_auto_parcer"
+        }
+    },
+
+    "applications": {
+        "mfc_auto_parcer": {
+            "type": "python 3.9",
+            "path": "/mfc_auto_parcer",
+            "home": "/usr/local",
+            "module": "main",
+            "callable": "app"
+        }
+    }
+}

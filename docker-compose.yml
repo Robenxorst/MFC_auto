@@ -1,0 +1,24 @@
+version: '3'
+# Сборка двух контейнеров - с МФЦ  и МФЦ CSI
+services:
+  app1:
+    build: .
+    container_name: mfc_auto
+    restart: always
+    logging:
+     driver: "json-file"
+     options:
+       max-size: "20m"
+       max-file: "3"
+    ports:
+      - "8088:8088"
+    environment:
+      - EMAIL=${EMAIL}
+      - PASSWORD=${PASSWORD}
+      - IMAP_SERVER=${IMAP_SERVER}
+      - IMAP_PORT=${IMAP_PORT}
+      - URL=${URL}
+      - ENDPOINT=${ENDPOINT}
+      - TOKEN=${TOKEN}
+      - TG_TOKEN=${TG_TOKEN}
+      - CHANNEL_ID=${CHANNEL_ID}
